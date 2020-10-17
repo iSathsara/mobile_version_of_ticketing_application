@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Dashboard_title"
+                android:textSize="35dp"
+                android:gravity="center"
+                android:background="@color/titleBackgroundClr"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:elevation="5dp"
+                android:padding="10dp"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardBackgroundClr"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="20dp" >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/smartCard_title"
+                        android:textStyle="bold"
+                        android:textColor=" #282828"
+                        android:textSize="30dp"
+                        android:paddingTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor=" #282828"
+                            android:textStyle="bold"
+                            android:text="Card ID  : "
+                            android:textSize="25dp"
+                            android:paddingTop="20dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/card_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor=" #282828"
+                            android:textStyle="bold"
+                            android:text="xxxx xxxx xxxx xxxx"
+                            android:textSize="29dp"
+                            android:paddingTop="20dp"
+                            android:layout_weight="1"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="2">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor=" #282828"
+                            android:textStyle="bold"
+                            android:text="Balance : "
+                            android:textSize="25dp"
+                            android:paddingTop="20dp"
+                            android:layout_weight="1"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/available_balance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor=" #282828"
+                            android:textStyle="bold"
+                            android:text="1200.00"
+                            android:textSize="30dp"
+                            android:paddingTop="20dp"
+                            android:layout_weight="1"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/recharge_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/buttonTextClr"
+                android:textSize="20dp"
+                android:background="@drawable/recharge_btn_layout"
+                android:text="@string/recharge"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/history_btn"
+                android:layout_width="match_parent"
+                android:background="@drawable/history_btn_layout"
+                android:layout_height="60dp"
+                android:textColor="@color/buttonTextClr"
+                android:textSize="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="@string/history"/>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Transport Lanka</string>
+    <string name="Dashboard_title">Transport Lanka</string>
+    <string name="Recharge_title">Recharge Smartcard</string>
+    <string name="smartCard_title">My Smartcard</string>
+    <string name="recharge">RECHARGE</string>
+    <string name="history">My Journey History</string>
+    <string name="action_settings">Settings</string>
+    <string name="login_button">Log In</string>
+    <string name="help_button">Help</string>
+</resources>

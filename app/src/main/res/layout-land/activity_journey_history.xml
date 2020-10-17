@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JourneyHistory"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/history"
+        android:textSize="35dp"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:background="@color/titleBackgroundClr"
+        android:textStyle="bold"
+        android:elevation="5dp"
+        android:padding="10dp"/>
+
+
+        <ListView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/journey_history"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+        </ListView>
+
+    <Button
+        android:id="@+id/back_to_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/history_btn_layout"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:textColor="@color/buttonTextClr"
+        android:textSize="20dp"
+        android:text="Go Back"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

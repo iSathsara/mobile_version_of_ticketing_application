@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Recharge">
+    
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Recharge_title"
+                android:textSize="35dp"
+                android:gravity="center"
+                android:textColor="@color/colorAccent"
+                android:background="@color/titleBackgroundClr"
+                android:textStyle="bold"
+                android:elevation="5dp"
+                android:padding="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardBackgroundClr"
+                android:layout_gravity="center"
+                android:layout_marginTop="90dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="20dp" >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor=" #282828"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="Your Credit Card Number" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/credit_card_no_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor=" #282828"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="CVC" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/credit_cvc_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor=" #282828"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="Expire Date" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/credit_expire_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"/>
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor=" #282828"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="Recharging amount (LKR) " />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/credit_amount_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/recharge_proceed_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textColor="@color/buttonTextClr"
+                android:textSize="26dp"
+                android:background="@drawable/recharge_btn_layout"
+                android:text="Proceed"/>
+            
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        
+        
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
