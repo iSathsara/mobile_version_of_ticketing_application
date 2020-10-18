@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
+                if(username.getText().toString().equals("982652111v") && password.getText().toString().equals("admin")){
                     gotoDashboard();
                     username.setText("");
                     password.setText("");

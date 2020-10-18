@@ -18,7 +18,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class JourneyHistory extends AppCompatActivity {
 
-    //String[] journeyHistory = {"J1","j2","j3","J4","J5","J6","J7","J8"};
     private Button backBtn;
     private TextView journeyResults;
 
@@ -51,10 +50,10 @@ public class JourneyHistory extends AppCompatActivity {
 
                 for (Posts post : posts) {
                     String content = "";
-                    content += "Date: " + post.getJdate().substring(0,10) + "\n";
-                    content += "Start Point: " + post.getJstartPosition() + "\n";
-                    content += "End Point: " + post.getJendPosition() + "\n";
-                    content += "Fare: " + post.getJfare() + "\n\n";
+                    content += "Date            : " + post.getJdate().substring(0,10) + "\n";
+                    content += "Start Point : " + post.getJstartPosition() + "\n";
+                    content += "End Point   : " + post.getJendPosition() + "\n";
+                    content += "Fare             : " + post.getJfare() + "\n\n";
                     journeyResults.append(content);
                 }
 
@@ -65,12 +64,6 @@ public class JourneyHistory extends AppCompatActivity {
                 journeyResults.setText(t.getMessage());
             }
         });
-
-        /*
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.list_view,journeyHistory);
-        ListView listView = findViewById(R.id.journey_history);
-        listView.setAdapter(adapter);
-        */
 
         backBtn = findViewById(R.id.back_to_dashboard);
         backBtn.setOnClickListener(new View.OnClickListener() {

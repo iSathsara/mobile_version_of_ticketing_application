@@ -48,6 +48,21 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#282828"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="Account Number" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/account_no_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:textColor=" #282828"
                         android:textStyle="bold"
                         android:textSize="20dp"
@@ -107,6 +122,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor=" #282828"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="Paying Date" />
+
+                    <EditText
+                        android:id="@+id/payment_date_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"/>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 

@@ -81,8 +81,8 @@
                             android:layout_height="wrap_content"
                             android:textColor=" #282828"
                             android:textStyle="bold"
-                            android:text="xxxx xxxx xxxx xxxx"
-                            android:textSize="20dp"
+                            android:text="982652111 V"
+                            android:textSize="25dp"
                             android:paddingTop="20dp"
                             android:layout_weight="1"/>
 
@@ -111,7 +111,7 @@
                             android:layout_height="wrap_content"
                             android:textColor=" #282828"
                             android:textStyle="bold"
-                            android:text="1200.00"
+                            android:text="1500.00"
                             android:textSize="30dp"
                             android:paddingTop="20dp"
                             android:layout_weight="1"/>

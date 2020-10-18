@@ -2,18 +2,27 @@ package com.example.csse_app;
 
 public class UserResponse {
 
-    private int id;
     private String cardnum;
+    private String ccnum;
     private String cvv;
     private String exdate;
     private String amount;
+    private String dates;
 
-    public int getId() {
-        return id;
+    public void setDates(String dates) {
+        this.dates = dates;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getDates() {
+        return dates;
+    }
+
+    public void setCcnum(String ccnum) {
+        this.ccnum = ccnum;
+    }
+
+    public String getCcnum() {
+        return ccnum;
     }
 
     public String getCardnum() {

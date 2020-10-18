@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -23,10 +26,12 @@ public class Recharge extends AppCompatActivity {
 
     private Button proceed;
     final Calendar myCalendar = Calendar.getInstance();
+    private EditText editAccountNo;
     private EditText expDate;
     private EditText editTextCardNo;
     private EditText editTextCvc;
     private EditText editTextAmount;
+    private EditText paymentDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +40,12 @@ public class Recharge extends AppCompatActivity {
 
         // initialize with corresponding IDs
         proceed = (Button) findViewById(R.id.recharge_proceed_btn);
+        editAccountNo = findViewById(R.id.account_no_input);
         expDate = findViewById(R.id.credit_expire_input);
         editTextCardNo = (EditText) findViewById(R.id.credit_card_no_input);
         editTextCvc = (EditText) findViewById(R.id.credit_cvc_input);
         editTextAmount = (EditText) findViewById(R.id.credit_amount_input);
+        paymentDate = findViewById(R.id.payment_date_input);
 
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +56,15 @@ public class Recharge extends AppCompatActivity {
             }
         });
 
+        // datepickers for expdate and paying date
         expDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(Recharge.this, date, myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        paymentDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(Recharge.this, date, myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
@@ -62,14 +77,17 @@ public class Recharge extends AppCompatActivity {
 
         UserRequests userRequests = new UserRequests();
 
-        userRequests.setCardnum(editTextCardNo.getText().toString());
+        userRequests.setCardnum(editAccountNo.getText().toString());
+        userRequests.setCcnum(editTextCardNo.getText().toString());
         userRequests.setCvv(editTextCvc.getText().toString());
         userRequests.setExdate(expDate.getText().toString());
         userRequests.setAmount(editTextAmount.getText().toString());
+        userRequests.setDates(paymentDate.getText().toString());
 
         return userRequests;
     }
 
+    // implementation of saving data into the idatabase.
     public void saveDetails(UserRequests userRequests){
         Call<UserResponse> userResponseCall = ApiClient.getUserService().saveDetails(userRequests);
         userResponseCall.enqueue(new Callback<UserResponse>() {
@@ -80,6 +98,7 @@ public class Recharge extends AppCompatActivity {
                     editTextCardNo.setText("");
                     editTextCvc.setText("");
                     editTextAmount.setText("");
+                    editAccountNo.setText("");
                     //startActivity(new Intent(Recharge.this, MainActivity.class));
                 }
                 else{
@@ -112,7 +131,7 @@ public class Recharge extends AppCompatActivity {
 
     }
 
-    // display alert dialog
+    // display alert dialog after finishing recharge
     private void showAlert(){
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);

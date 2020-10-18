@@ -8,11 +8,11 @@ public class Posts {
     private String jendPosition;
     private String jdate;
     private String jfare;
+    private int balance;
 
+    public int getBalance() { return balance; }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public String getJstartPosition() {
         return jstartPosition;

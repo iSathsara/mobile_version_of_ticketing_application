@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
+    // act as a helper class to communicating with database.
     private static Retrofit getRetrofit(){
 
 
