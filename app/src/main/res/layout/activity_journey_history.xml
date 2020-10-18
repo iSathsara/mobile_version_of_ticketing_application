@@ -19,6 +19,7 @@
         android:elevation="5dp"
         android:padding="10dp"/>
 
+    <!--
     <ListView
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
@@ -26,7 +27,22 @@
         android:id="@+id/journey_history"
         android:layout_width="match_parent"
         android:layout_height="450dp">
-    </ListView>
+    </ListView> -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+    </androidx.core.widget.NestedScrollView>
 
     <Button
         android:id="@+id/back_to_dashboard"
@@ -39,6 +55,5 @@
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:text="Go Back"/>
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

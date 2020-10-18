@@ -10,30 +10,42 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Recharge extends AppCompatActivity {
 
     private Button proceed;
     final Calendar myCalendar = Calendar.getInstance();
     private EditText expDate;
+    private EditText editTextCardNo;
+    private EditText editTextCvc;
+    private EditText editTextAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recharge);
 
+        // initialize with corresponding IDs
         proceed = (Button) findViewById(R.id.recharge_proceed_btn);
         expDate = findViewById(R.id.credit_expire_input);
-
+        editTextCardNo = (EditText) findViewById(R.id.credit_card_no_input);
+        editTextCvc = (EditText) findViewById(R.id.credit_cvc_input);
+        editTextAmount = (EditText) findViewById(R.id.credit_amount_input);
 
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showAlert();
+
+                saveDetails(createRequest());
+
             }
         });
 
@@ -45,6 +57,43 @@ public class Recharge extends AppCompatActivity {
         });
 
     }
+
+    public UserRequests createRequest(){
+
+        UserRequests userRequests = new UserRequests();
+
+        userRequests.setCardnum(editTextCardNo.getText().toString());
+        userRequests.setCvv(editTextCvc.getText().toString());
+        userRequests.setExdate(expDate.getText().toString());
+        userRequests.setAmount(editTextAmount.getText().toString());
+
+        return userRequests;
+    }
+
+    public void saveDetails(UserRequests userRequests){
+        Call<UserResponse> userResponseCall = ApiClient.getUserService().saveDetails(userRequests);
+        userResponseCall.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if(response.isSuccessful()){
+                    showAlert();
+                    editTextCardNo.setText("");
+                    editTextCvc.setText("");
+                    editTextAmount.setText("");
+                    //startActivity(new Intent(Recharge.this, MainActivity.class));
+                }
+                else{
+                    Toast.makeText(Recharge.this,"Recharge Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                Toast.makeText(Recharge.this,"Recharge Failed "+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -87,4 +136,5 @@ public class Recharge extends AppCompatActivity {
         });
 
     }
+
 }
